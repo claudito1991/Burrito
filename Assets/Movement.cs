@@ -18,11 +18,13 @@ public class Movement : MonoBehaviour
     private Transform currentPosition;
     public float timeRemaining = 5f;
     public DiceThrow throwingDice;
+    private GameManaging gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         throwingDice = GetComponent<DiceThrow>();
+        gameManager = FindObjectOfType<GameManaging>();
     }
 
     // Update is called once per frame
@@ -168,6 +170,7 @@ public class Movement : MonoBehaviour
         if (waypointIndex <= 0)
         {
             autoReturnState = false;
+            gameManager.ChangeTurn();
             waypointIndex = 0;
             
         }

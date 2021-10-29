@@ -17,6 +17,7 @@ public class Movement : MonoBehaviour
     private int waypointIndex = -1;
     private Transform currentPosition;
     public float timeRemaining = 5f;
+    public float waitingTime = 2f;
     public DiceThrow throwingDice;
     private GameManaging gameManager;
 
@@ -156,7 +157,7 @@ public class Movement : MonoBehaviour
                     //Debug.Log($"The dice result of this node is: {throwingDice.DiceThrowing()}");
                     gameObject.SendMessage("DiceThrowing");
                     GetNextWayPoint();
-                    timeRemaining = 5f;
+                    timeRemaining = waitingTime;
                 }
                 
             }

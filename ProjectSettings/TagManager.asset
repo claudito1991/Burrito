@@ -6,6 +6,7 @@ TagManager:
   tags:
   - nodo
   - cafe
+  - gamemanager
   layers:
   - Default
   - TransparentFX

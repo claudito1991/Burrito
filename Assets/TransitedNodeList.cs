@@ -17,7 +17,9 @@ public class TransitedNodeList : MonoBehaviour
             {
                 listaNodos.Add(other.GetComponent<Collider>());
                 listaCafeLocal = other.GetComponentInChildren<cafeSpawneadoLocal>();
-                inventario.InventarioLocal(other.GetComponent<GeneradorCafe>().CoffeVal);
+                //En lugar de tomar CoffeVal para el inventario tengo que tomar la cantidad de elementos actual en la lista de café
+                //Sino al borrar el cafe con un player previo este también tiene acceso.
+                inventario.InventarioLocal(other.GetComponentInChildren<cafeSpawneadoLocal>().listaCafe.Count);
                 
                 EraseCoffeList();
                 //Debug.Log($"La lista de nodos es: {listaNodos.Count} ");
@@ -37,8 +39,9 @@ public class TransitedNodeList : MonoBehaviour
         for (int i=0; i < listaCafeLocal.listaCafe.Count; i++)
         {
             Destroy(listaCafeLocal.listaCafe[i]);
+
         }
-        
+        listaCafeLocal.listaCafe.Clear();
     }
 
 }

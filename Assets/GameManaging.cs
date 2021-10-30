@@ -59,6 +59,7 @@ public class GameManaging : MonoBehaviour
             GetInventarioP2(player2);
             player2TotalScore += player2alforja;
             scoreUIP2.SetScore(player2TotalScore);
+            WinningConditionCheck(player2TotalScore, player2);
             player2alforja = 0;
             player2.GetComponent<Inventory>().ResetLocalInventory();
 
@@ -72,6 +73,7 @@ public class GameManaging : MonoBehaviour
             GetInventarioP1(player1);
             player1TotalScore += player1alforja;
             scoreUI.SetScore(player1TotalScore);
+            WinningConditionCheck(player1TotalScore, player1);
             player1alforja = 0;
             player1.GetComponent<Inventory>().ResetLocalInventory();
         }
@@ -100,6 +102,17 @@ public class GameManaging : MonoBehaviour
     {
         diceResult = Dice;
         Debug.Log($"the dice says: {diceResult}");
+    }
+
+    public void WinningConditionCheck(int playerScore, GameObject player)
+    {
+        if (playerScore >= setMaxScore)
+        {
+            Debug.Log($"Ganó el player: {player}");
+        }
+        
+
+        
     }
 
 

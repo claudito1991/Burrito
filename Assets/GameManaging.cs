@@ -79,13 +79,13 @@ public class GameManaging : MonoBehaviour
     public void GetInventarioP1(GameObject Player)
     {
         player1alforja = Player.GetComponent<Inventory>().InventarioPersonaje;
-        return;
+        
     }
-
+  
     public void GetInventarioP2(GameObject Player)
     {
         player2alforja = Player.GetComponent<Inventory>().InventarioPersonaje;
-        return;
+        
     }
 
     public void GetDiceResult(int Dice)

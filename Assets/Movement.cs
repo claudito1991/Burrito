@@ -31,6 +31,11 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            gameManager.ChangeTurn();
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             autoReturnState = true;
@@ -155,7 +160,7 @@ public class Movement : MonoBehaviour
                 if(timeRemaining<=0)
                 {
                     //Debug.Log($"The dice result of this node is: {throwingDice.DiceThrowing()}");
-                    gameObject.SendMessage("DiceThrowing");
+                    
                     GetNextWayPoint();
                     timeRemaining = waitingTime;
                 }
@@ -177,6 +182,8 @@ public class Movement : MonoBehaviour
         }
         else
         {
+            //Este código puesto acá hace que el dado se tire en todos los nodos menos en el último
+            gameObject.SendMessage("DiceThrowing");
             waypointIndex--;
         }
         target = baseDeLista.listaNodos[waypointIndex].GetComponent<Transform>();

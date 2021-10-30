@@ -35,6 +35,8 @@ public class Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
         {
             gameManager.ChangeTurn();
+            gameManager.listaSkippedTurns.Add(1);
+            gameManager.CheckPassedTurns();
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -63,6 +65,8 @@ public class Movement : MonoBehaviour
                 else
                 {
                     targetPoint = new Vector3(Hits[0].point.x, player.position.y, Hits[0].point.z);
+                    //Agrego un 0 por cada turno que efectivamente me muevo.
+                    gameManager.listaSkippedTurns.Add(0);
                 }
                 
 
@@ -72,6 +76,7 @@ public class Movement : MonoBehaviour
         if (isMoving)
         // Si la variable isMoving está en true voy a moverme suavemente entre los puntos. 
         {
+
             player.position = Vector3.Lerp(player.position, targetPoint, Time.deltaTime * 1f);
             //player.Translate(new Vector3(Hits[0].point.x, player.position.y, Hits[0].point.z));
             if (Vector3.Distance(player.position, targetPoint) < 0.5f)

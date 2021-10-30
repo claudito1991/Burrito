@@ -208,7 +208,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Victory
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -1560,6 +1560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597435d71e19ca744a18e35003858313, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listaSkippedTurns: 
   player1: {fileID: 1990539064}
   player2: {fileID: 789024473}
   player1SpawnLoc: {fileID: 324671450}
@@ -1574,7 +1575,11 @@ MonoBehaviour:
   diceResult: 0
   scoreUI: {fileID: 1797470808}
   scoreUIP2: {fileID: 934552384}
-  setMaxScore: 5
+  TMPText: {fileID: 116737128}
+  setMaxScore: 10
+  playerOneWins: 0
+  playerTwiWins: 0
+  bothTurnsSkipped: 0
 --- !u!4 &1252037878
 Transform:
   m_ObjectHideFlags: 0

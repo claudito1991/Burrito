@@ -10,12 +10,17 @@ public class WinAndLoseText : MonoBehaviour
     void Start()
     {
         texto = GetComponent<TMP_Text>();
-        texto.text = $"Ganaste {4}";
+      
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void TMPText(GameObject player)
+    {
+        texto.text = $"{player.name} ganó";
     }
 }

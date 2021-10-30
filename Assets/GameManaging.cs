@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameManaging : MonoBehaviour
 {
-   
+
+    public List<int> listaSkippedTurns = new List<int>();
     public GameObject player1;
     public GameObject player2;
     public Transform player1SpawnLoc;
@@ -24,7 +25,12 @@ public class GameManaging : MonoBehaviour
 
     public TotalScore scoreUI;
     public TotalScore scoreUIP2;
+    public WinAndLoseText TMPText;
     public int setMaxScore = 30;
+
+    public bool playerOneWins = false;
+    public bool playerTwiWins = false;
+    public bool bothTurnsSkipped = false;
 
 
     // Start is called before the first frame update
@@ -59,9 +65,10 @@ public class GameManaging : MonoBehaviour
             GetInventarioP2(player2);
             player2TotalScore += player2alforja;
             scoreUIP2.SetScore(player2TotalScore);
-            WinningConditionCheck(player2TotalScore, player2);
+     
             player2alforja = 0;
             player2.GetComponent<Inventory>().ResetLocalInventory();
+            EndGame();
 
 
         }
@@ -73,9 +80,10 @@ public class GameManaging : MonoBehaviour
             GetInventarioP1(player1);
             player1TotalScore += player1alforja;
             scoreUI.SetScore(player1TotalScore);
-            WinningConditionCheck(player1TotalScore, player1);
+          
             player1alforja = 0;
             player1.GetComponent<Inventory>().ResetLocalInventory();
+            EndGame();
         }
         player1Turn = !player1Turn;
     }
@@ -104,15 +112,88 @@ public class GameManaging : MonoBehaviour
         Debug.Log($"the dice says: {diceResult}");
     }
 
-    public void WinningConditionCheck(int playerScore, GameObject player)
-    {
-        if (playerScore >= setMaxScore)
-        {
-            Debug.Log($"Ganó el player: {player}");
-        }
-        
+    //public void WinningConditionCheck(int playerScore, GameObject player, bool playerWon)
+    //{
+    //    if (playerScore >= setMaxScore )
+    //    {
+            
+    //        playerWon = true;
+    //    }
+    //}
 
-        
+    public void WinOrLose()
+    {
+        //Esto chequea primero si el score alcanzado es superior al score necesario para ganar y dispara un booleano en consecuencia.
+
+       if( player1TotalScore>=setMaxScore)
+        {
+            playerOneWins = true;
+        }
+        if (setMaxScore <= player2TotalScore)
+        {
+            playerTwiWins= true;
+        }
+
+        //Si ambos jugadores pasan el turno de manera continuada. Se termina el juego. En este caso se chequea el puntaje mayor para determinar el victorioso.
+        if (bothTurnsSkipped)
+        {
+            if(player1TotalScore>player2TotalScore)
+            {
+                playerOneWins = true;
+            }
+            if(player1TotalScore<player2TotalScore)
+            {
+                playerTwiWins = true;
+            }
+        }
+    }
+
+
+
+
+
+
+    public void CheckPassedTurns()
+    {
+        //Este codigo comienza a contar cuando la cantidad de turnos pasados es de 2 o mayor. Si es así chequea cada vez que es llamado y hay dos 
+        //turnos consecutivos con el mismo valor.
+        if (listaSkippedTurns.Count>=2)
+        {
+            for (int i = 0; i < listaSkippedTurns.Count-1; i++)
+            {
+                if (listaSkippedTurns[i] == listaSkippedTurns[i + 1] && listaSkippedTurns[i]==1)
+                {
+                    Debug.Log("Ambos pasaron el turno");
+                    bothTurnsSkipped = true;
+                    EndGame();
+                }
+            }
+        }
+
+    }
+
+    public void EndGame()
+    {
+        WinOrLose();
+        if (playerOneWins)
+        {
+            Debug.Log("Se acabó el juego ganó Player1");
+            player1.SetActive(false);
+            player2.SetActive(false);
+            TMPText.TMPText(player1);
+            Debug.Log("Trigerea endgame");
+
+        }
+
+        if(playerTwiWins)
+        {
+            Debug.Log("Se acabó el juego ganó el Player2");
+            player1.SetActive(false);
+            player2.SetActive(false);
+            TMPText.TMPText(player2);
+            Debug.Log("Trigerea endgame");
+        }
+
     }
 
 

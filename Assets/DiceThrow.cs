@@ -7,6 +7,7 @@ public class DiceThrow : MonoBehaviour
     public int diceTopRange;
     public int diceResult;
     public GameManaging gameManager;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class DiceThrow : MonoBehaviour
     public int DiceThrowing()
     {
         diceResult = Random.Range(1, diceTopRange);
-        gameManager.GetDiceResult(diceResult);
+        gameManager.GetDiceResult(diceResult,player);
         //print(diceResult);
         return diceResult;
     }

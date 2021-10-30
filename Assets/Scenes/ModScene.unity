@@ -1112,6 +1112,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 789024473}
     - target: {fileID: 8548144593306170965, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
       propertyPath: parentTag
@@ -1576,7 +1581,7 @@ MonoBehaviour:
   scoreUI: {fileID: 1797470808}
   scoreUIP2: {fileID: 934552384}
   TMPText: {fileID: 116737128}
-  setMaxScore: 10
+  setMaxScore: 40
   playerOneWins: 0
   playerTwiWins: 0
   bothTurnsSkipped: 0
@@ -2601,6 +2606,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: d625c5ec60a7a2b41ba467ca60a80c54, type: 2}
+    - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1990539064}
     - target: {fileID: 8548144593306170965, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
       propertyPath: parentTag

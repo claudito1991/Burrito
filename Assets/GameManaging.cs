@@ -62,12 +62,14 @@ public class GameManaging : MonoBehaviour
             player2.transform.position = player2SpawnLoc.position;
             player2.GetComponent<Movement>().enabled = false;
             player1.GetComponent<Movement>().enabled = true;
+            player1.GetComponent<Movement>().waypointIndex = -1;
             GetInventarioP2(player2);
             player2TotalScore += player2alforja;
             scoreUIP2.SetScore(player2TotalScore);
-     
+            player1.GetComponent<TransitedNodeList>().EraseTransitedNodeList();
             player2alforja = 0;
             player2.GetComponent<Inventory>().ResetLocalInventory();
+          
             EndGame();
 
 
@@ -77,10 +79,11 @@ public class GameManaging : MonoBehaviour
             player1.transform.position = player1SpawnLoc.position;
             player1.GetComponent<Movement>().enabled = false;
             player2.GetComponent<Movement>().enabled = true;
+            player2.GetComponent<Movement>().waypointIndex = -1;
             GetInventarioP1(player1);
             player1TotalScore += player1alforja;
             scoreUI.SetScore(player1TotalScore);
-          
+            player2.GetComponent<TransitedNodeList>().EraseTransitedNodeList();
             player1alforja = 0;
             player1.GetComponent<Inventory>().ResetLocalInventory();
             EndGame();
@@ -106,10 +109,23 @@ public class GameManaging : MonoBehaviour
         
     }
 
-    public void GetDiceResult(int Dice)
+    public void GetDiceResult(int Dice, GameObject player)
     {
         diceResult = Dice;
-        Debug.Log($"the dice says: {diceResult}");
+
+        if(player == player1 && diceResult == player1alforja)
+        {
+            //Debug.Log("player1 perdió la alforja");
+            player1alforja = 0;
+        }
+        if (player == player2 && diceResult == player2alforja)
+        {
+            //Debug.Log("player2 perdió la alforja");
+            player2alforja = 0;
+        }
+
+
+        //Debug.Log($"the dice says: {diceResult}");
     }
 
     //public void WinningConditionCheck(int playerScore, GameObject player, bool playerWon)
@@ -145,6 +161,14 @@ public class GameManaging : MonoBehaviour
             {
                 playerTwiWins = true;
             }
+        }
+    }
+
+    public void DiceChecker(int diceResult, int playerAlforja)
+    {
+        if(diceResult == playerAlforja)
+        {
+            playerAlforja = 0;
         }
     }
 

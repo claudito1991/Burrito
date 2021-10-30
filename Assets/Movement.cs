@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     public bool autoReturnState = false;
     public bool Returning;
     private Transform target;
-    private int waypointIndex = -1;
+    public int waypointIndex = -1;
     private Transform currentPosition;
     public float timeRemaining = 5f;
     public float waitingTime = 2f;
@@ -141,7 +141,8 @@ public class Movement : MonoBehaviour
             if (target == null)
             {
                 target = baseDeLista.listaNodos[waypointIndex-1].GetComponent<Transform>();
-               
+                Debug.Log($"Waypoint index actual : {waypointIndex}");
+                Debug.Log($"Waypoint index destino : {waypointIndex-1}");
             }
 
             //Debug.Log($"El target es: {target.position}");
@@ -177,18 +178,19 @@ public class Movement : MonoBehaviour
     }
     public void GetNextWayPoint()
     {
-        Debug.Log("Se entró a GetNextWaypoing");
+       // Debug.Log("Se entró a GetNextWaypoing");
         if (waypointIndex <= 0)
         {
             autoReturnState = false;
             gameManager.ChangeTurn();
-            waypointIndex = 0;
-            
+            waypointIndex = -1;
+            target = null;
         }
         else
         {
             //Este código puesto acá hace que el dado se tire en todos los nodos menos en el último
             gameObject.SendMessage("DiceThrowing");
+            
             waypointIndex--;
         }
         target = baseDeLista.listaNodos[waypointIndex].GetComponent<Transform>();

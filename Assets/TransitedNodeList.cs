@@ -44,4 +44,14 @@ public class TransitedNodeList : MonoBehaviour
         listaCafeLocal.listaCafe.Clear();
     }
 
+
+    public void EraseTransitedNodeList()
+    {
+        if (listaNodos.Count > 0)
+        {
+            listaNodos = new List<Collider>();
+        }
+        
+    }
+
 }

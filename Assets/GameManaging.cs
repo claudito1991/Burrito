@@ -22,6 +22,10 @@ public class GameManaging : MonoBehaviour
 
     public int diceResult;
 
+    public TotalScore scoreUI;
+    public TotalScore scoreUIP2;
+    public int setMaxScore = 30;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +34,8 @@ public class GameManaging : MonoBehaviour
         player2.GetComponent<Movement>().enabled = false;
         player1alforja = player1.GetComponent<Inventory>().InventarioPersonaje;
         player2alforja = player2.GetComponent<Inventory>().InventarioPersonaje;
+        scoreUI.MaxScoreUI(setMaxScore);
+        scoreUIP2.MaxScoreUI(setMaxScore);
 
         //diceResultP1 = player1.GetComponent<DiceThrow>().diceResult;
         //diceResultP2 = player2.GetComponent<DiceThrow>().diceResult;
@@ -52,6 +58,7 @@ public class GameManaging : MonoBehaviour
             player1.GetComponent<Movement>().enabled = true;
             GetInventarioP2(player2);
             player2TotalScore += player2alforja;
+            scoreUIP2.SetScore(player2TotalScore);
             player2alforja = 0;
             player2.GetComponent<Inventory>().ResetLocalInventory();
 
@@ -64,6 +71,7 @@ public class GameManaging : MonoBehaviour
             player2.GetComponent<Movement>().enabled = true;
             GetInventarioP1(player1);
             player1TotalScore += player1alforja;
+            scoreUI.SetScore(player1TotalScore);
             player1alforja = 0;
             player1.GetComponent<Inventory>().ResetLocalInventory();
         }

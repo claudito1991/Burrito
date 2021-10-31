@@ -115,13 +115,15 @@ public class GameManaging : MonoBehaviour
 
         if(player == player1 && diceResult == player1alforja)
         {
-            //Debug.Log("player1 perdió la alforja");
+           
             player1alforja = 0;
+            Debug.Log($"player1 perdió la alforja {player1alforja}" );
         }
         if (player == player2 && diceResult == player2alforja)
         {
-            //Debug.Log("player2 perdió la alforja");
             player2alforja = 0;
+            Debug.Log($"player2 perdió la alforja: {player2alforja}");
+
         }
 
 

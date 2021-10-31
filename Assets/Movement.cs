@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
     public float waitingTime = 2f;
     public DiceThrow throwingDice;
     private GameManaging gameManager;
+    public float playerSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -77,7 +78,7 @@ public class Movement : MonoBehaviour
         // Si la variable isMoving está en true voy a moverme suavemente entre los puntos. 
         {
 
-            player.position = Vector3.Lerp(player.position, targetPoint, Time.deltaTime * 1f);
+            player.position = Vector3.Lerp(player.position, targetPoint, Time.deltaTime * playerSpeed);
             //player.Translate(new Vector3(Hits[0].point.x, player.position.y, Hits[0].point.z));
             if (Vector3.Distance(player.position, targetPoint) < 0.5f)
             {
@@ -141,8 +142,8 @@ public class Movement : MonoBehaviour
             if (target == null && waypointIndex >-1)
             {
                 target = baseDeLista.listaNodos[waypointIndex-1].GetComponent<Transform>();
-                Debug.Log($"Waypoint index actual : {waypointIndex}");
-                Debug.Log($"Waypoint index destino : {waypointIndex-1}");
+               // Debug.Log($"Waypoint index actual : {waypointIndex}");
+               // Debug.Log($"Waypoint index destino : {waypointIndex-1}");
             }
 
             //Debug.Log($"El target es: {target.position}");

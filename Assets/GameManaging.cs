@@ -33,6 +33,7 @@ public class GameManaging : MonoBehaviour
     public bool bothTurnsSkipped = false;
 
     public CameraFollow followingCamera;
+    public bool noSuma;
 
 
     // Start is called before the first frame update
@@ -52,6 +53,8 @@ public class GameManaging : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log($"player 1 alfoja value: {player1alforja}");
+        Debug.Log($"player 1 alfoja value: {player2alforja}");
 
     }
 
@@ -67,12 +70,16 @@ public class GameManaging : MonoBehaviour
             player1.GetComponent<Movement>().enabled = true;
             //player1.GetComponent<Movement>().waypointIndex = -1;
             GetInventarioP2(player2);
-            player2TotalScore += player2alforja;
+            if(!noSuma)
+            {
+                player2TotalScore += player2alforja;
+            }
+            
             scoreUIP2.SetScore(player2TotalScore);
             player1.GetComponent<TransitedNodeList>().EraseTransitedNodeList();
             player2alforja = 0;
             player2.GetComponent<Inventory>().ResetLocalInventory();
-          
+            noSuma = false;
             EndGame();
 
 
@@ -85,12 +92,17 @@ public class GameManaging : MonoBehaviour
             player2.GetComponent<Movement>().enabled = true;
             //player2.GetComponent<Movement>().waypointIndex = -1;
             GetInventarioP1(player1);
-            player1TotalScore += player1alforja;
+            if(!noSuma)
+            {
+                player1TotalScore += player1alforja;
+            }
+            
             scoreUI.SetScore(player1TotalScore);
             player2.GetComponent<TransitedNodeList>().EraseTransitedNodeList();
             player1alforja = 0;
             player1.GetComponent<Inventory>().ResetLocalInventory();
             EndGame();
+            noSuma = false;
         }
         player1Turn = !player1Turn;
     }
@@ -113,19 +125,20 @@ public class GameManaging : MonoBehaviour
         
     }
 
-    public void GetDiceResult(int Dice, GameObject player)
+    public void  GetDiceResult(int Dice, GameObject player)
     {
         diceResult = Dice;
 
         if(player == player1 && diceResult == player1alforja)
         {
-           
+            noSuma = true;
             player1alforja = 0;
             Debug.Log($"player1 perdió la alforja {player1alforja}" );
         }
         if (player == player2 && diceResult == player2alforja)
         {
             player2alforja = 0;
+            noSuma = true;
             Debug.Log($"player2 perdió la alforja: {player2alforja}");
 
         }

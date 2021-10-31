@@ -22,6 +22,8 @@ public class Movement : MonoBehaviour
     private GameManaging gameManager;
     public float playerSpeed;
     public float playerReturnSpeed;
+    public Rigidbody playerRB;
+    private Vector3 velocity = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -40,12 +42,7 @@ public class Movement : MonoBehaviour
             gameManager.listaSkippedTurns.Add(1);
             gameManager.CheckPassedTurns();
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            autoReturnState = true;
-            waypointIndex = baseDeLista.listaNodos.Count - 1;
-        }
-        MovementReturning();
+
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
@@ -88,6 +85,17 @@ public class Movement : MonoBehaviour
         }
 
 
+
+    }
+
+    private void LateUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            autoReturnState = true;
+            waypointIndex = baseDeLista.listaNodos.Count - 1;
+        }
+        MovementReturning();
 
     }
 
@@ -153,6 +161,9 @@ public class Movement : MonoBehaviour
             //Debug.Log($"Target position: {target.position}");
             //transform.position = Vector3.Lerp(player.position, target.position, Time.deltaTime * 1f);
             player.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * playerReturnSpeed);
+            
+     
+
             //transform.position = target.position;
             //Debug.Log($"waypoint index : {waypointIndex}");
 
@@ -161,14 +172,15 @@ public class Movement : MonoBehaviour
 
             if (Vector3.Distance(transform.position, target.position) <= 1f)
             {
-
-                timeRemaining -= Time.deltaTime;
                 
+                timeRemaining -= Time.deltaTime;
+                //playerRB.constraints = RigidbodyConstraints.FreezePositionZ;
 
-                if(timeRemaining<=0)
+                if (timeRemaining<=0)
                 {
-                    //Debug.Log($"The dice result of this node is: {throwingDice.DiceThrowing()}");
                     
+                    //Debug.Log($"The dice result of this node is: {throwingDice.DiceThrowing()}");
+
                     GetNextWayPoint();
                     timeRemaining = waitingTime;
                 }

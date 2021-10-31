@@ -1428,6 +1428,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumer: 2
+--- !u!54 &789024477 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8548144593306170922, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+    type: 3}
+  m_PrefabInstance: {fileID: 917083997}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &815927673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1530,6 +1536,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
+      propertyPath: playerRB
+      value: 
+      objectReference: {fileID: 789024477}
     - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
       propertyPath: mainCamera
@@ -2471,6 +2482,7 @@ MonoBehaviour:
   playerTwiWins: 0
   bothTurnsSkipped: 0
   followingCamera: {fileID: 963194229}
+  noSuma: 0
 --- !u!4 &1252037878
 Transform:
   m_ObjectHideFlags: 0
@@ -3394,6 +3406,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerNumer: 1
+--- !u!54 &1990539068 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 8548144593306170922, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8548144593530880277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1990539072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8548144593306170920, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
@@ -3961,6 +3979,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8548144593306170922, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548144593306170922, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
+      propertyPath: playerRB
+      value: 
+      objectReference: {fileID: 1990539068}
     - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
       propertyPath: mainCamera

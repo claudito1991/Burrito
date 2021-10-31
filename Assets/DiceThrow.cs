@@ -23,7 +23,7 @@ public class DiceThrow : MonoBehaviour
     {
         diceResult = Random.Range(1, diceTopRange);
         gameManager.GetDiceResult(diceResult,player);
-        //print(diceResult);
+        print(diceResult);
         return diceResult;
     }
 }

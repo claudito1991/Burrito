@@ -34,6 +34,7 @@ public class GameManaging : MonoBehaviour
 
     public CameraFollow followingCamera;
     public bool noSuma;
+    public int maxAlforja;
 
 
     // Start is called before the first frame update
@@ -53,8 +54,8 @@ public class GameManaging : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log($"player 1 alfoja value: {player1alforja}");
-        Debug.Log($"player 1 alfoja value: {player2alforja}");
+       // Debug.Log($"player 1 alfoja value: {player1alforja}");
+        //Debug.Log($"player 1 alfoja value: {player2alforja}");
 
     }
 

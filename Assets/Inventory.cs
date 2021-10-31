@@ -23,6 +23,12 @@ public class Inventory : MonoBehaviour
     public void InventarioLocal(int CantidadAsumar)
     {
         InventarioPersonaje += CantidadAsumar;
+
+        if (InventarioPersonaje >= gameManager.maxAlforja)
+        {
+            InventarioPersonaje = 0;
+        }
+
         if (parentTag.CompareTag("Player"))
         {
             gameManager.player1alforja = InventarioPersonaje;

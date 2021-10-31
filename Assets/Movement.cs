@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour
     public DiceThrow throwingDice;
     private GameManaging gameManager;
     public float playerSpeed;
+    public float playerReturnSpeed;
 
     // Start is called before the first frame update
     void Start()
@@ -151,7 +152,7 @@ public class Movement : MonoBehaviour
 
             //Debug.Log($"Target position: {target.position}");
             //transform.position = Vector3.Lerp(player.position, target.position, Time.deltaTime * 1f);
-            player.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * 1f);
+            player.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * playerReturnSpeed);
             //transform.position = target.position;
             //Debug.Log($"waypoint index : {waypointIndex}");
 

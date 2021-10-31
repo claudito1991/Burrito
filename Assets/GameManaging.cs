@@ -62,7 +62,7 @@ public class GameManaging : MonoBehaviour
             player2.transform.position = player2SpawnLoc.position;
             player2.GetComponent<Movement>().enabled = false;
             player1.GetComponent<Movement>().enabled = true;
-            player1.GetComponent<Movement>().waypointIndex = -1;
+            //player1.GetComponent<Movement>().waypointIndex = -1;
             GetInventarioP2(player2);
             player2TotalScore += player2alforja;
             scoreUIP2.SetScore(player2TotalScore);
@@ -79,7 +79,7 @@ public class GameManaging : MonoBehaviour
             player1.transform.position = player1SpawnLoc.position;
             player1.GetComponent<Movement>().enabled = false;
             player2.GetComponent<Movement>().enabled = true;
-            player2.GetComponent<Movement>().waypointIndex = -1;
+            //player2.GetComponent<Movement>().waypointIndex = -1;
             GetInventarioP1(player1);
             player1TotalScore += player1alforja;
             scoreUI.SetScore(player1TotalScore);

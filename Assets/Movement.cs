@@ -138,7 +138,7 @@ public class Movement : MonoBehaviour
             
             //Debug.Log($"Waypoint index max value is: {waypointIndex}");
 
-            if (target == null)
+            if (target == null && waypointIndex >-1)
             {
                 target = baseDeLista.listaNodos[waypointIndex-1].GetComponent<Transform>();
                 Debug.Log($"Waypoint index actual : {waypointIndex}");
@@ -193,7 +193,12 @@ public class Movement : MonoBehaviour
             
             waypointIndex--;
         }
-        target = baseDeLista.listaNodos[waypointIndex].GetComponent<Transform>();
+
+        if (waypointIndex > -1)
+        {
+            target = baseDeLista.listaNodos[waypointIndex].GetComponent<Transform>();
+        }
+        
 
     }
 

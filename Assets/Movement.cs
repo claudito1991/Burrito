@@ -29,7 +29,7 @@ public class Movement : MonoBehaviour
     public DiceThrow dice;
     public GameObject diceText;
     public GameObject _currentObjectText;
-    public Vector3 offset = new Vector3(0.2f, 0, 0.2f);
+   
 
     // Start is called before the first frame update
     void Start()
@@ -69,7 +69,7 @@ public class Movement : MonoBehaviour
                 }
                 else
                 {
-                    targetPoint = new Vector3(Hits[0].point.x, Hits[0].point.y + 1, Hits[0].point.z);
+                    targetPoint = new Vector3(Hits[0].point.x, Hits[0].point.y+1, Hits[0].point.z);
                     player.transform.LookAt(targetPoint);
                     //Agrego un 0 por cada turno que efectivamente me muevo.
                     gameManager.listaSkippedTurns.Add(0);
@@ -167,7 +167,7 @@ public class Movement : MonoBehaviour
 
             //Debug.Log($"Target position: {target.position}");
             //transform.position = Vector3.Lerp(player.position, target.position, Time.deltaTime * 1f);
-            player.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, target.position.y, target.position.z), Time.deltaTime * playerReturnSpeed);
+            player.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, target.position.y+1, target.position.z), Time.deltaTime * playerReturnSpeed);
             player.transform.LookAt(new Vector3(target.position.x, player.position.y, target.position.z));
 
 

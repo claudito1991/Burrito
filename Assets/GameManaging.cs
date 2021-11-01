@@ -33,7 +33,7 @@ public class GameManaging : MonoBehaviour
     public bool playerTwiWins = false;
     public bool bothTurnsSkipped = false;
 
-    public CameraFollow followingCamera;
+    public CamControl followingCamera;
     public bool noSuma;
     public int maxAlforja;
 
@@ -69,7 +69,7 @@ public class GameManaging : MonoBehaviour
 
         if (player1Turn)
         {
-            followingCamera.Target = player1.transform;
+            followingCamera.player = player1.transform;
             player2.transform.position = player2SpawnLoc.position;
             player2.GetComponent<Movement>().enabled = false;
             player1.GetComponent<Movement>().enabled = true;
@@ -91,7 +91,7 @@ public class GameManaging : MonoBehaviour
         }
         else
         {
-            followingCamera.Target = player2.transform;
+            followingCamera.player = player2.transform;
             player1.transform.position = player1SpawnLoc.position;
             player1.GetComponent<Movement>().enabled = false;
             player2.GetComponent<Movement>().enabled = true;

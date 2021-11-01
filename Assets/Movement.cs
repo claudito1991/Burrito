@@ -29,6 +29,7 @@ public class Movement : MonoBehaviour
     public DiceThrow dice;
     public GameObject diceText;
     public GameObject _currentObjectText;
+    public Color color;
    
 
     // Start is called before the first frame update
@@ -176,7 +177,7 @@ public class Movement : MonoBehaviour
 
 
             //Debug.Log($"Distance to waypoint is: {Vector3.Distance(transform.position, target.position)}");
-            Debug.Log($"Vector3 Distance: {Vector3.Distance(transform.position, target.position)}");
+            //Debug.Log($"Vector3 Distance: {Vector3.Distance(transform.position, target.position)}");
             if (Vector3.Distance(transform.position, target.position) <= 2f)
             {
                 
@@ -240,7 +241,14 @@ public class Movement : MonoBehaviour
         _currentObjectText = Instantiate(diceText, player.transform.position, Quaternion.identity);
         _currentObjectText.transform.LookAt(mainCamera.transform.position);
         _currentObjectText.transform.Rotate(Vector3.up, 180);
+
         _currentObjectText.GetComponent<TMP_Text>().text = dice.diceResult.ToString();
+
+        if(gameManager.player1alforja == 0)
+        {
+            _currentObjectText.GetComponent<TMP_Text>().color = Color.red;
+        }
+        
     }
 
 

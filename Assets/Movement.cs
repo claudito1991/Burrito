@@ -8,6 +8,7 @@ public class Movement : MonoBehaviour
     private RaycastHit[] Hits = new RaycastHit[1];
     public LayerMask layerMask;
     public Transform player;
+    public GameObject playerGO;
     public bool isMoving;
     public Vector3 targetPoint;
     public TransitedNodeList baseDeLista;
@@ -16,7 +17,7 @@ public class Movement : MonoBehaviour
     private Transform target;
     public int waypointIndex = -1;
     private Transform currentPosition;
-    public float timeRemaining = 5f;
+    public float timeRemaining;
     public float waitingTime = 2f;
     public DiceThrow throwingDice;
     private GameManaging gameManager;
@@ -24,6 +25,7 @@ public class Movement : MonoBehaviour
     public float playerReturnSpeed;
     public Rigidbody playerRB;
     private Vector3 velocity = Vector3.zero;
+    public DiceThrow dice;
 
     // Start is called before the first frame update
     void Start()
@@ -173,14 +175,16 @@ public class Movement : MonoBehaviour
             if (Vector3.Distance(transform.position, target.position) <= 1f)
             {
                 
+               
+
                 timeRemaining -= Time.deltaTime;
                 //playerRB.constraints = RigidbodyConstraints.FreezePositionZ;
 
                 if (timeRemaining<=0)
                 {
-                    
-                    //Debug.Log($"The dice result of this node is: {throwingDice.DiceThrowing()}");
 
+                    //Debug.Log($"The dice result of this node is: {throwingDice.DiceThrowing()}");
+                    
                     GetNextWayPoint();
                     timeRemaining = waitingTime;
                 }
@@ -203,8 +207,9 @@ public class Movement : MonoBehaviour
         else
         {
             //Este código puesto acá hace que el dado se tire en todos los nodos menos en el último
+            //gameObject.SendMessage("DiceThrowing");
             gameObject.SendMessage("DiceThrowing");
-            
+            gameManager.GetDiceResult(dice.diceResult, playerGO);
             waypointIndex--;
         }
 

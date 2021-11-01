@@ -7,7 +7,7 @@ public class CamControl : MonoBehaviour
     public Transform player;
     public Transform camTransform;
     private Vector3 velocity = Vector3.zero;
-    public float SmoothTime = 0.3f;
+    public float SmoothTime = 0.1f;
     public float speed;
     
     // Start is called before the first frame update

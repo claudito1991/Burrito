@@ -30,6 +30,7 @@ public class Movement : MonoBehaviour
     public GameObject diceText;
     public GameObject _currentObjectText;
     public Color color;
+    public bool mostrarDado;
    
 
     // Start is called before the first frame update
@@ -53,6 +54,7 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            mostrarDado = true;
             //Este código va a hacer un raycast y si el layer no es el enmascarado se va a guardar ese punto en target point y pasar la variable isMoving a true
             isMoving = true;
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -168,6 +170,7 @@ public class Movement : MonoBehaviour
 
             //Debug.Log($"Target position: {target.position}");
             //transform.position = Vector3.Lerp(player.position, target.position, Time.deltaTime * 1f);
+
             player.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, target.position.y+1, target.position.z), Time.deltaTime * playerReturnSpeed);
             player.transform.LookAt(new Vector3(target.position.x, player.position.y, target.position.z));
 
@@ -236,20 +239,38 @@ public class Movement : MonoBehaviour
 
     public void DiceAndShow()
     {
-        gameObject.SendMessage("DiceThrowing");
-        gameManager.GetDiceResult(dice.diceResult, playerGO);
-        _currentObjectText = Instantiate(diceText, player.transform.position, Quaternion.identity);
-        _currentObjectText.transform.LookAt(mainCamera.transform.position);
-        _currentObjectText.transform.Rotate(Vector3.up, 180);
-
-        _currentObjectText.GetComponent<TMP_Text>().text = dice.diceResult.ToString();
-
-        if(gameManager.player1alforja == 0)
+        if (mostrarDado)
         {
-            _currentObjectText.GetComponent<TMP_Text>().color = Color.red;
+            gameObject.SendMessage("DiceThrowing");
+            gameManager.GetDiceResult(dice.diceResult, playerGO);
+            _currentObjectText = Instantiate(diceText, player.transform.position, Quaternion.identity);
+            _currentObjectText.transform.LookAt(mainCamera.transform.position);
+            _currentObjectText.transform.Rotate(Vector3.up, 180);
+
+            _currentObjectText.GetComponent<TMP_Text>().text = dice.diceResult.ToString();
+            if (player.CompareTag("Player"))
+            {
+                if (gameManager.player1alforja == 0)
+                {
+                    _currentObjectText.GetComponent<TMP_Text>().color = Color.red;
+                    mostrarDado = false;
+                }
+
+            }
+            if (player.CompareTag("Player2"))
+            {
+                if (gameManager.player2alforja == 0)
+                {
+                    _currentObjectText.GetComponent<TMP_Text>().color = Color.red;
+                    mostrarDado = false;
+                }
+
+            }
+
         }
-        
     }
+
+
 
 
 }

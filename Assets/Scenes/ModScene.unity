@@ -1044,7 +1044,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &706046321
 PrefabInstance:
@@ -1263,36 +1263,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdc4b5023c9361546a34442f51d950d5, type: 3}
---- !u!1 &759534559
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 759534560}
-  m_Layer: 0
-  m_Name: DiceTextPopUp
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &759534560
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 759534559}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4864204, y: 1.1794562, z: 2.0705326}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &768848318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,7 +1496,7 @@ PrefabInstance:
     - target: {fileID: 8548144593306170920, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8548144593306170920, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
@@ -1585,6 +1555,12 @@ PrefabInstance:
       objectReference: {fileID: 789024475}
     - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
+      propertyPath: diceText
+      value: 
+      objectReference: {fileID: 5909440960891153022, guid: 6be39d1b4764d0b448a4cb02640dd9d9,
+        type: 3}
+    - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
       propertyPath: playerGO
       value: 
       objectReference: {fileID: 789024473}
@@ -1601,7 +1577,7 @@ PrefabInstance:
     - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
       propertyPath: playerSpeed
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
@@ -1611,7 +1587,7 @@ PrefabInstance:
     - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
       propertyPath: playerReturnSpeed
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8548144593306170925, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
@@ -2514,6 +2490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listaSkippedTurns: 
+  mainCamera: {fileID: 0}
   player1: {fileID: 1990539064}
   player2: {fileID: 789024473}
   player1SpawnLoc: {fileID: 324671450}
@@ -2536,6 +2513,9 @@ MonoBehaviour:
   followingCamera: {fileID: 963194229}
   noSuma: 0
   maxAlforja: 10
+  diceText: {fileID: 5909440960891153022, guid: 6be39d1b4764d0b448a4cb02640dd9d9,
+    type: 3}
+  _currentObjectText: {fileID: 963194225}
 --- !u!4 &1252037878
 Transform:
   m_ObjectHideFlags: 0
@@ -4061,6 +4041,12 @@ PrefabInstance:
       objectReference: {fileID: 1990539066}
     - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
+      propertyPath: diceText
+      value: 
+      objectReference: {fileID: 5909440960891153022, guid: 6be39d1b4764d0b448a4cb02640dd9d9,
+        type: 3}
+    - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
       propertyPath: playerGO
       value: 
       objectReference: {fileID: 1990539064}
@@ -4077,7 +4063,7 @@ PrefabInstance:
     - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
       propertyPath: playerSpeed
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
@@ -4087,7 +4073,12 @@ PrefabInstance:
     - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
       propertyPath: playerReturnSpeed
-      value: 3
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548144593306170924, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
+      propertyPath: _currentObjectText
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8548144593306170925, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}

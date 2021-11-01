@@ -26,6 +26,8 @@ public class Movement : MonoBehaviour
     public Rigidbody playerRB;
     private Vector3 velocity = Vector3.zero;
     public DiceThrow dice;
+    public GameObject diceText;
+    public GameObject _currentObjectText;
 
     // Start is called before the first frame update
     void Start()
@@ -210,6 +212,10 @@ public class Movement : MonoBehaviour
             //gameObject.SendMessage("DiceThrowing");
             gameObject.SendMessage("DiceThrowing");
             gameManager.GetDiceResult(dice.diceResult, playerGO);
+            _currentObjectText = Instantiate(diceText, player.transform.position, Quaternion.identity);
+            _currentObjectText.transform.LookAt(mainCamera.transform.position);
+            _currentObjectText.transform.Rotate(Vector3.up,180);
+
             waypointIndex--;
         }
 

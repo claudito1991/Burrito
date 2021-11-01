@@ -6,6 +6,7 @@ public class GameManaging : MonoBehaviour
 {
 
     public List<int> listaSkippedTurns = new List<int>();
+    public Camera mainCamera;
     public GameObject player1;
     public GameObject player2;
     public Transform player1SpawnLoc;
@@ -35,6 +36,9 @@ public class GameManaging : MonoBehaviour
     public CameraFollow followingCamera;
     public bool noSuma;
     public int maxAlforja;
+
+    public GameObject diceText;
+    public GameObject _currentObjectText;
 
 
     // Start is called before the first frame update
@@ -130,7 +134,9 @@ public class GameManaging : MonoBehaviour
     {
         diceResult = Dice;
 
-        if(player == player1 && diceResult == player1alforja)
+
+
+        if (player == player1 && diceResult == player1alforja)
         {
             noSuma = true;
             player1alforja = 0;

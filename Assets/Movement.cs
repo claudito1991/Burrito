@@ -164,17 +164,17 @@ public class Movement : MonoBehaviour
 
             //Debug.Log($"Target position: {target.position}");
             //transform.position = Vector3.Lerp(player.position, target.position, Time.deltaTime * 1f);
-            player.position = Vector3.Lerp(transform.position, target.position, Time.deltaTime * playerReturnSpeed);
-            
-     
+            player.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x, player.position.y, target.position.z), Time.deltaTime * playerReturnSpeed);
+
+
 
             //transform.position = target.position;
             //Debug.Log($"waypoint index : {waypointIndex}");
 
 
             //Debug.Log($"Distance to waypoint is: {Vector3.Distance(transform.position, target.position)}");
-
-            if (Vector3.Distance(transform.position, target.position) <= 1f)
+            Debug.Log($"Vector3 Distance: {Vector3.Distance(transform.position, target.position)}");
+            if (Vector3.Distance(transform.position, target.position) <= 2f)
             {
                 
                

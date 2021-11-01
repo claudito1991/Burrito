@@ -10,19 +10,21 @@ public class GeneradorCafe : MonoBehaviour
     private Collider placeCollider;
     private GameObject objetoInstanciado;
     public cafeSpawneadoLocal listaDeCafes;
+    public int coffeMinRand;
+    public int coffeMaxRand;
    
    
    
     // Start is called before the first frame update
     private void Awake()
     {
-        CoffeVal = Random.Range(1, 5);
+        CoffeVal = Random.Range(coffeMinRand, coffeMaxRand);
         placeCollider = spawnPlace.GetComponentInParent<Collider>();
 
         for (int i = 0; i < CoffeVal; i++)
         {
             //Debug.Log($"Numero de iteracion: {i}");
-            var objetoInstanciado = Instantiate(cafe, RandomPointInBounds(placeCollider.bounds), spawnPlace.transform.rotation);
+            var objetoInstanciado = Instantiate(cafe, RandomPointInBounds(placeCollider.bounds), cafe.transform.rotation);
             objetoInstanciado.GetComponent<trackCoffeParent>().parent = spawnPlace;
             listaDeCafes.listaCafe.Add(objetoInstanciado);
         }

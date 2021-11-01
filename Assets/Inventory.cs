@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
     {
         InventarioPersonaje += CantidadAsumar;
 
-        if (InventarioPersonaje >= gameManager.maxAlforja)
+        if (InventarioPersonaje > gameManager.maxAlforja)
         {
             InventarioPersonaje = 0;
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Movement : MonoBehaviour
 {
@@ -68,6 +69,7 @@ public class Movement : MonoBehaviour
                 else
                 {
                     targetPoint = new Vector3(Hits[0].point.x, player.position.y, Hits[0].point.z);
+                    player.transform.LookAt(targetPoint);
                     //Agrego un 0 por cada turno que efectivamente me muevo.
                     gameManager.listaSkippedTurns.Add(0);
                 }
@@ -164,8 +166,8 @@ public class Movement : MonoBehaviour
 
             //Debug.Log($"Target position: {target.position}");
             //transform.position = Vector3.Lerp(player.position, target.position, Time.deltaTime * 1f);
-            player.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x, player.position.y, target.position.z), Time.deltaTime * playerReturnSpeed);
-
+            player.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, player.position.y, target.position.z), Time.deltaTime * playerReturnSpeed);
+            player.transform.LookAt(new Vector3(target.position.x, player.position.y, target.position.z));
 
 
             //transform.position = target.position;
@@ -188,6 +190,7 @@ public class Movement : MonoBehaviour
                     //Debug.Log($"The dice result of this node is: {throwingDice.DiceThrowing()}");
                     
                     GetNextWayPoint();
+                    
                     timeRemaining = waitingTime;
                 }
                 
@@ -210,12 +213,7 @@ public class Movement : MonoBehaviour
         {
             //Este código puesto acá hace que el dado se tire en todos los nodos menos en el último
             //gameObject.SendMessage("DiceThrowing");
-            gameObject.SendMessage("DiceThrowing");
-            gameManager.GetDiceResult(dice.diceResult, playerGO);
-            _currentObjectText = Instantiate(diceText, player.transform.position, Quaternion.identity);
-            _currentObjectText.transform.LookAt(mainCamera.transform.position);
-            _currentObjectText.transform.Rotate(Vector3.up,180);
-
+            DiceAndShow();
             waypointIndex--;
         }
 
@@ -232,6 +230,16 @@ public class Movement : MonoBehaviour
         
         yield return new WaitForSeconds(5f);
         
+    }
+
+    public void DiceAndShow()
+    {
+        gameObject.SendMessage("DiceThrowing");
+        gameManager.GetDiceResult(dice.diceResult, playerGO);
+        _currentObjectText = Instantiate(diceText, player.transform.position, Quaternion.identity);
+        _currentObjectText.transform.LookAt(mainCamera.transform.position);
+        _currentObjectText.transform.Rotate(Vector3.up, 180);
+        _currentObjectText.GetComponent<TMP_Text>().text = dice.diceResult.ToString();
     }
 
 

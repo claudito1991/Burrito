@@ -196,7 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 330e97a36a6f8db4c9e151ac7a63feaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cafe: {fileID: 950952814567620674, guid: 34dd455c76d88a048bb74e066c601460, type: 3}
+  cafe: {fileID: 5199487206664763935, guid: 7e46afec98bf96d43b4cb3cf554e40d7, type: 3}
   spawnPlace: {fileID: 208040732328268473}
   CoffeVal: 0
   listaDeCafes: {fileID: 612685753}
+  coffeMinRand: 2
+  coffeMaxRand: 5

@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
     public Camera mainCamera;
     public GameObject textoPerdiste;
     public bool perdiste;
+    public GameObject cafeMolido;
    
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,16 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(InventarioPersonaje>0)
+        {
+            cafeMolido.SetActive(true);
+        }
+
+        if (InventarioPersonaje == 0)
+        {
+            cafeMolido.SetActive(false);
+        }
+
     }
 
     public void InventarioLocal(int CantidadAsumar)

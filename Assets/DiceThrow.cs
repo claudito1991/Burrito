@@ -20,7 +20,10 @@ public class DiceThrow : MonoBehaviour
         
     }
     public int DiceThrowing()
+
+
     {
+        Random.InitState((int)System.DateTime.Now.Ticks);
         diceResult = Random.Range(1, diceTopRange);
         //gameManager.GetDiceResult(diceResult,player);
         

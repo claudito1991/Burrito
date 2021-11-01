@@ -26,12 +26,18 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate()
     {
-
+        
 
         // update position
         Vector3 targetPosition = Target.position + Offset;
         camTransform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, SmoothTime);
         camTransform.LookAt(Target.position);
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            camTransform.RotateAround(Target.transform.position, Vector3.up, 20 * Time.deltaTime);
+        }
+        
         // update rotation
         //transform.LookAt(Target);
     }

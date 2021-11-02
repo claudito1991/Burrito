@@ -51,6 +51,9 @@ public class GameManaging : MonoBehaviour
     public GameObject textoTurnos;
     public ShowTurnos turnosText;
 
+    public GameObject cafeMolidoP1;
+    public GameObject cafeMolidoP2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -170,7 +173,10 @@ public class GameManaging : MonoBehaviour
             var Perdiste = player1.GetComponent<Inventory>().ShowPerdiste();
             Perdiste.transform.position = new Vector3(0, 2, 0)+ player1.transform.position;
             player1alforja = 0;
-           
+            cafeMolidoP1.SetActive(false);
+            
+
+
         }
         if (player == player2 && diceResult == player2alforja)
         {
@@ -178,8 +184,9 @@ public class GameManaging : MonoBehaviour
             var Perdiste = player2.GetComponent<Inventory>().ShowPerdiste();
             Perdiste.transform.position = new Vector3(0, 2, 0) + player2.transform.position;
             player2alforja = 0;
-            //player1.GetComponent<Inventory>().ShowPerdiste();
-            
+            cafeMolidoP2.SetActive(false);
+
+
 
         }
 

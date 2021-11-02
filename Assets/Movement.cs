@@ -164,8 +164,9 @@ public class Movement : MonoBehaviour
             if (target == null && waypointIndex >-1)
             {
                 target = baseDeLista.listaNodos[waypointIndex-1].GetComponent<Transform>();
-               // Debug.Log($"Waypoint index actual : {waypointIndex}");
-               // Debug.Log($"Waypoint index destino : {waypointIndex-1}");
+                DiceAndShow();
+                // Debug.Log($"Waypoint index actual : {waypointIndex}");
+                // Debug.Log($"Waypoint index destino : {waypointIndex-1}");
             }
 
             //Debug.Log($"El target es: {target.position}");

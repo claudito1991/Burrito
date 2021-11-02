@@ -27,7 +27,7 @@ public class TransitedNodeList : MonoBehaviour
             }
 
             actualNodePosition = other.GetComponent<Orden>().branchPosition;
-            Debug.Log($"El numero del nodo actual es: {actualNodePosition}");
+            //Debug.Log($"El numero del nodo actual es: {actualNodePosition}");
             
                 
         }

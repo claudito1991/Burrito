@@ -1951,6 +1951,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 623f17c9e8bd4b94f933261b0a6da3df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &789024479 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8548144593306170923, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+    type: 3}
+  m_PrefabInstance: {fileID: 917083997}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789024473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bc468caf7c32d44b9ab3058d45cb9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &789024483 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8548144593306170920, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
@@ -2419,8 +2431,18 @@ PrefabInstance:
       objectReference: {fileID: 789024478}
     - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
+      propertyPath: nodesCount
+      value: 
+      objectReference: {fileID: 789024479}
+    - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
       propertyPath: diceTopRange
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
+      propertyPath: maxDiceRange
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
@@ -5331,6 +5353,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 623f17c9e8bd4b94f933261b0a6da3df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1990539069 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8548144593306170923, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8548144593530880277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990539064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bc468caf7c32d44b9ab3058d45cb9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1990539072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8548144593306170920, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
@@ -6141,8 +6175,18 @@ PrefabInstance:
       objectReference: {fileID: 1990539067}
     - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
+      propertyPath: nodesCount
+      value: 
+      objectReference: {fileID: 1990539069}
+    - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
       propertyPath: diceTopRange
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
+      propertyPath: maxDiceRange
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}

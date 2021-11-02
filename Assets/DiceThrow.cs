@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class DiceThrow : MonoBehaviour
 {
-    public int diceTopRange;
-    public int diceTopRandeDiffucult;
+    public int maxDiceRange;
+   
     public int diceResult;
     public GameManaging gameManager;
     public GameObject player;
     public Inventory inventario;
+    public TransitedNodeList nodesCount;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -27,17 +29,14 @@ public class DiceThrow : MonoBehaviour
     {
         Random.InitState((int)System.DateTime.Now.Ticks);
 
-        if(inventario.InventarioPersonaje<=5)
-        {
-            Debug.Log("easy");
-            diceResult = Random.Range(1, diceTopRange);
-        }
-
-        if (inventario.InventarioPersonaje > 5)
-        {
-            Debug.Log("Difficult");
-            diceResult = Random.Range(1, diceTopRandeDiffucult);
-        }
+            var topRange = maxDiceRange - inventario.InventarioPersonaje - (2 * nodesCount.listaNodos.Count);
+            Debug.Log($"Valor de inventario: {inventario.InventarioPersonaje}");
+            Debug.Log($"lista de nodos cantidad:{nodesCount.listaNodos.Count}");
+            Debug.Log($"Resultado top range del dado:{topRange}");
+            diceResult = Random.Range(1, topRange);
+            
+         
+     
 
 
         //gameManager.GetDiceResult(diceResult,player);

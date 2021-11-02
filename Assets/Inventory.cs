@@ -43,7 +43,7 @@ public class Inventory : MonoBehaviour
         if (InventarioPersonaje > gameManager.maxAlforja)
         {
             perdiste = true;
-            ShowPerdiste(textoPerdiste);
+            ShowPerdiste();
             InventarioPersonaje = 0;
         }
 
@@ -83,15 +83,16 @@ public class Inventory : MonoBehaviour
 
     }
 
-    public void ShowPerdiste(GameObject texto)
+    public GameObject ShowPerdiste()
     {
 
-        var textoInstanciado = Instantiate(texto, parentTag.transform.position, Quaternion.identity);
+        var textoInstanciado = Instantiate(textoPerdiste, parentTag.transform.position, Quaternion.identity);
         textoInstanciado.transform.LookAt(mainCamera.transform.position);
         textoInstanciado.transform.Rotate(Vector3.up, 180);
         textoInstanciado.GetComponent<TMP_Text>().color = Color.red;
         textoInstanciado.GetComponent<TMP_Text>().text = "¡Perdiste el café!";
-
+        return textoInstanciado;
+     
 
     }
 }

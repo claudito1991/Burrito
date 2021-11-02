@@ -150,14 +150,19 @@ public class GameManaging : MonoBehaviour
         if (player == player1 && diceResult == player1alforja)
         {
             noSuma = true;
+            var Perdiste = player1.GetComponent<Inventory>().ShowPerdiste();
+            Perdiste.transform.position = new Vector3(0, 2, 0)+ player1.transform.position;
             player1alforja = 0;
-            Debug.Log($"player1 perdió la alforja {player1alforja}" );
+           
         }
         if (player == player2 && diceResult == player2alforja)
         {
-            player2alforja = 0;
             noSuma = true;
-            Debug.Log($"player2 perdió la alforja: {player2alforja}");
+            var Perdiste = player2.GetComponent<Inventory>().ShowPerdiste();
+            Perdiste.transform.position = new Vector3(0, 2, 0) + player2.transform.position;
+            player2alforja = 0;
+            //player1.GetComponent<Inventory>().ShowPerdiste();
+            
 
         }
 

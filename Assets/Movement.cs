@@ -61,7 +61,7 @@ public class Movement : MonoBehaviour
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.RaycastNonAlloc(ray, Hits) > 0)
             {
-                Debug.Log($"El nodo target tiene un branch position de: {Hits[0].transform.GetComponent<Orden>().branchPosition}"); 
+               // Debug.Log($"El nodo target tiene un branch position de: {Hits[0].transform.GetComponent<Orden>().branchPosition}"); 
 
                 if (baseDeLista.listaNodos.Contains(Hits[0].collider) || Hits[0].transform.GetComponent<Orden>().branchPosition < baseDeLista.actualNodePosition+1)
                 {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManaging : MonoBehaviour
 {
@@ -45,7 +46,10 @@ public class GameManaging : MonoBehaviour
     public Collider baseColliderP2;
 
     public CoffeExistanceChecker cafeEnEscena;
-
+    public int turnCountAux;
+    public List<int> listaTurnos = new List<int>();
+    public GameObject textoTurnos;
+    public ShowTurnos turnosText;
 
     // Start is called before the first frame update
     void Start()
@@ -75,6 +79,7 @@ public class GameManaging : MonoBehaviour
 
         if (player1Turn)
         {
+            turnCountAux += 1;
             followingCamera.player = player1.transform;
             player2.transform.position = player2SpawnLoc.position;
             player2.GetComponent<Movement>().enabled = false;
@@ -122,6 +127,15 @@ public class GameManaging : MonoBehaviour
             player1.GetComponent<Inventory>().ResetLocalInventory();
             EndGame();
             noSuma = false;
+            turnCountAux += 1;
+        }
+
+        if(turnCountAux ==2)
+        {
+            turnCountAux = 0;
+            listaTurnos.Add(1);
+            turnosText.MostrarTurnos(listaTurnos.Count);
+            
         }
         player1Turn = !player1Turn;
     }

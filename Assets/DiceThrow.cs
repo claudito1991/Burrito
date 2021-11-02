@@ -30,9 +30,9 @@ public class DiceThrow : MonoBehaviour
         Random.InitState((int)System.DateTime.Now.Ticks);
 
             var topRange = maxDiceRange - inventario.InventarioPersonaje - (2 * nodesCount.listaNodos.Count);
-            Debug.Log($"Valor de inventario: {inventario.InventarioPersonaje}");
-            Debug.Log($"lista de nodos cantidad:{nodesCount.listaNodos.Count}");
-            Debug.Log($"Resultado top range del dado:{topRange}");
+            //Debug.Log($"Valor de inventario: {inventario.InventarioPersonaje}");
+            //Debug.Log($"lista de nodos cantidad:{nodesCount.listaNodos.Count}");
+            //Debug.Log($"Resultado top range del dado:{topRange}");
             diceResult = Random.Range(1, topRange);
             
          

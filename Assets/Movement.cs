@@ -106,6 +106,7 @@ public class Movement : MonoBehaviour
         {
             autoReturnState = true;
             waypointIndex = baseDeLista.listaNodos.Count - 1;
+            
         }
         MovementReturning();
 
@@ -215,6 +216,7 @@ public class Movement : MonoBehaviour
             gameManager.ChangeTurn();
             waypointIndex = -1;
             target = null;
+            baseDeLista.actualNodePosition = 0;
         }
         else
         {

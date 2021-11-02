@@ -44,6 +44,8 @@ public class GameManaging : MonoBehaviour
     public Collider baseColliderP1;
     public Collider baseColliderP2;
 
+    public CoffeExistanceChecker cafeEnEscena;
+
 
     // Start is called before the first frame update
     void Start()
@@ -92,6 +94,7 @@ public class GameManaging : MonoBehaviour
             player2.GetComponent<Inventory>().ResetLocalInventory();
             noSuma = false;
             EndGame();
+            
 
 
         }
@@ -200,6 +203,18 @@ public class GameManaging : MonoBehaviour
                 playerOneWins = true;
             }
             if(player1TotalScore<player2TotalScore)
+            {
+                playerTwiWins = true;
+            }
+        }
+
+        if (cafeEnEscena.CantidadDeCafeEnEscena() ==0)
+        {
+            if (player1TotalScore > player2TotalScore)
+            {
+                playerOneWins = true;
+            }
+            if (player1TotalScore < player2TotalScore)
             {
                 playerTwiWins = true;
             }

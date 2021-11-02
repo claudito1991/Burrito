@@ -8,6 +8,7 @@ public class TransitedNodeList : MonoBehaviour
     public float actualNodePosition = 0;
     public Inventory inventario;
     public cafeSpawneadoLocal listaCafeLocal;
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,9 +21,10 @@ public class TransitedNodeList : MonoBehaviour
                 //En lugar de tomar CoffeVal para el inventario tengo que tomar la cantidad de elementos actual en la lista de café
                 //Sino al borrar el cafe con un player previo este también tiene acceso.
                 inventario.InventarioLocal(other.GetComponentInChildren<cafeSpawneadoLocal>().listaCafe.Count);
-               
+                
                 
                 EraseCoffeList();
+                
                 //Debug.Log($"La lista de nodos es: {listaNodos.Count} ");
             }
 

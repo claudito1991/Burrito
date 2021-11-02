@@ -5,7 +5,7 @@ using UnityEngine;
 public class TransitedNodeList : MonoBehaviour
 {
     public List<Collider> listaNodos = new List<Collider>();
-    public float actualNodePosition;
+    public float actualNodePosition = 0;
     public Inventory inventario;
     public cafeSpawneadoLocal listaCafeLocal;
 
@@ -27,7 +27,7 @@ public class TransitedNodeList : MonoBehaviour
             }
 
             actualNodePosition = other.GetComponent<Orden>().branchPosition;
-           // Debug.Log($"El numero del nodo actual es: {actualNodePosition}");
+            Debug.Log($"El numero del nodo actual es: {actualNodePosition}");
             
                 
         }

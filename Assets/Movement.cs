@@ -31,6 +31,7 @@ public class Movement : MonoBehaviour
     public GameObject _currentObjectText;
     public Color color;
     public bool mostrarDado;
+    public int currentBranchNumber;
    
 
     // Start is called before the first frame update
@@ -60,9 +61,9 @@ public class Movement : MonoBehaviour
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             if (Physics.RaycastNonAlloc(ray, Hits) > 0)
             {
+                Debug.Log($"El nodo target tiene un branch position de: {Hits[0].transform.GetComponent<Orden>().branchPosition}"); 
 
-
-                if (baseDeLista.listaNodos.Contains(Hits[0].collider) || Hits[0].transform.GetComponent<Orden>().branchPosition > baseDeLista.actualNodePosition + 1)
+                if (baseDeLista.listaNodos.Contains(Hits[0].collider) || Hits[0].transform.GetComponent<Orden>().branchPosition < baseDeLista.actualNodePosition+1)
                 {
                     //Si ya pasé por el nodo o si el nodo al que me quiero mover está más lejos que 1 nodo de distancia, esta parte del código no me va a dejar mover.
                     //Puedo agregar un cartel en la UI que le diga al jugador que no se puede mover ahí.
@@ -76,6 +77,7 @@ public class Movement : MonoBehaviour
                     player.transform.LookAt(targetPoint);
                     //Agrego un 0 por cada turno que efectivamente me muevo.
                     gameManager.listaSkippedTurns.Add(0);
+                    //currentBranchNumber = Hits[0].transform.GetComponent<Orden>().branchPosition;
                 }
                 
 

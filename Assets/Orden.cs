@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Orden : MonoBehaviour
 {
-    public float branchPosition;
+    public int branchPosition;
 }

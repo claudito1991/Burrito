@@ -40,6 +40,10 @@ public class GameManaging : MonoBehaviour
     public GameObject diceText;
     public GameObject _currentObjectText;
 
+    public Volcador volcador;
+    public Collider baseColliderP1;
+    public Collider baseColliderP2;
+
 
     // Start is called before the first frame update
     void Start()
@@ -78,8 +82,10 @@ public class GameManaging : MonoBehaviour
             if(!noSuma)
             {
                 player2TotalScore += player2alforja;
+                volcador.GenerateCoffeInBase(player2, player2alforja, baseColliderP2);
             }
             
+
             scoreUIP2.SetScore(player2TotalScore);
             player1.GetComponent<TransitedNodeList>().EraseTransitedNodeList();
             player2alforja = 0;
@@ -100,7 +106,12 @@ public class GameManaging : MonoBehaviour
             if(!noSuma)
             {
                 player1TotalScore += player1alforja;
+                volcador.GenerateCoffeInBase(player1, player1alforja, baseColliderP1);
             }
+
+          
+
+            
             
             scoreUI.SetScore(player1TotalScore);
             player2.GetComponent<TransitedNodeList>().EraseTransitedNodeList();

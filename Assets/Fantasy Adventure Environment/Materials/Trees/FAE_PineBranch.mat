@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FAE_PineBranch
-  m_Shader: {fileID: 4800000, guid: 85827a98514358f438446da0fc64b0f5, type: 3}
+  m_Shader: {fileID: 10606, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: GEOM_TYPE_LEAF _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 1
@@ -104,16 +104,19 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _ShadowStrength: 1
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SnowHeight: 0
     - _SpecularHighlights: 1
+    - _SquashAmount: 1
     - _SrcBlend: 1
     - _TessMax: 25
     - _TessMin: 10
     - _TessPhongStrength: 0.5
     - _TessValue: 4
     - _Tessellation: 0.1
+    - _TranslucencyViewDependency: 0.7
     - _UVSec: 0
     - _UseSpeedTreeWind: 0
     - _WindAmplitudeMultiplier: 3
@@ -125,7 +128,10 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
+    - _TranslucencyColor: {r: 0.73, g: 0.85, b: 0.41, a: 1}
     - _Transmisioncolor: {r: 0.007352948, g: 1, b: 0.09634888, a: 0}
     - _TransmissionColor: {r: 0, g: 0, b: 0, a: 0}
+    - _TreeInstanceColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TreeInstanceScale: {r: 1, g: 1, b: 1, a: 1}
     - _VariationColor: {r: 0, g: 0.5862069, b: 1, a: 0.134}
     - _Variationcolor: {r: 1, g: 0.5, b: 0, a: 0}

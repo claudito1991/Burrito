@@ -176,6 +176,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52b7d70b1de7c4ce09662b77c14d9fda, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
 --- !u!4 &65240312 stripped
@@ -291,6 +295,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -6.387
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52b7d70b1de7c4ce09662b77c14d9fda, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
 --- !u!1 &116737124
@@ -1558,12 +1566,12 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 84f4fe9cd6de9424e9855956d5e0f966, type: 2}
-  m_TreeDistance: 5000
+  m_TreeDistance: 100
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 1
+  m_TreeMaximumFullLODCount: 500
+  m_DetailObjectDistance: 100
+  m_DetailObjectDensity: 0.9
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
@@ -1849,6 +1857,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52b7d70b1de7c4ce09662b77c14d9fda, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
 --- !u!4 &698364143 stripped
@@ -2505,12 +2517,12 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: a98b4c5f5a6be0841829c3c74427cd78, type: 2}
-  m_TreeDistance: 5000
+  m_TreeDistance: 100
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 1
+  m_TreeMaximumFullLODCount: 500
+  m_DetailObjectDistance: 100
+  m_DetailObjectDensity: 0.9
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
@@ -2707,6 +2719,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -3.101
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52b7d70b1de7c4ce09662b77c14d9fda, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
 --- !u!1 &843550627
@@ -2748,12 +2764,12 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 73ba4a9d00b37d54e92e0a3174a7a30a, type: 2}
-  m_TreeDistance: 5000
+  m_TreeDistance: 100
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 1
+  m_TreeMaximumFullLODCount: 500
+  m_DetailObjectDistance: 100
+  m_DetailObjectDensity: 0.9
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
@@ -3152,7 +3168,7 @@ PrefabInstance:
     - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
       propertyPath: maxDiceRange
-      value: 40
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
@@ -3473,8 +3489,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 80
+  far clip plane: 500
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -3903,12 +3919,12 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: b535ab0d0833ad243bdf7a352b4b886b, type: 2}
-  m_TreeDistance: 5000
+  m_TreeDistance: 100
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
-  m_DetailObjectDensity: 1
+  m_TreeMaximumFullLODCount: 500
+  m_DetailObjectDistance: 100
+  m_DetailObjectDensity: 0.9
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
   m_HeightmapMaximumLOD: 0
@@ -5064,6 +5080,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.926
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52b7d70b1de7c4ce09662b77c14d9fda, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
 --- !u!4 &1412414204 stripped
@@ -5464,7 +5484,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 17.954
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 2300000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52b7d70b1de7c4ce09662b77c14d9fda, type: 2}
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 780611a67e8e941a2b3aa96e5915a793, type: 3}
 --- !u!4 &1479264019 stripped
 Transform:
@@ -7256,7 +7281,7 @@ PrefabInstance:
     - target: {fileID: 208040733130641745, guid: fdc4b5023c9361546a34442f51d950d5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.8740625
+      value: 6.735548
       objectReference: {fileID: 0}
     - target: {fileID: 208040733130641745, guid: fdc4b5023c9361546a34442f51d950d5,
         type: 3}
@@ -7266,12 +7291,12 @@ PrefabInstance:
     - target: {fileID: 208040733130641745, guid: fdc4b5023c9361546a34442f51d950d5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.9727097
+      value: 5.707945
       objectReference: {fileID: 0}
     - target: {fileID: 208040733130641745, guid: fdc4b5023c9361546a34442f51d950d5,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.84151554
       objectReference: {fileID: 0}
     - target: {fileID: 208040733130641745, guid: fdc4b5023c9361546a34442f51d950d5,
         type: 3}
@@ -7281,7 +7306,7 @@ PrefabInstance:
     - target: {fileID: 208040733130641745, guid: fdc4b5023c9361546a34442f51d950d5,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.540233
       objectReference: {fileID: 0}
     - target: {fileID: 208040733130641745, guid: fdc4b5023c9361546a34442f51d950d5,
         type: 3}
@@ -7296,12 +7321,17 @@ PrefabInstance:
     - target: {fileID: 208040733130641745, guid: fdc4b5023c9361546a34442f51d950d5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 65.399
       objectReference: {fileID: 0}
     - target: {fileID: 208040733130641745, guid: fdc4b5023c9361546a34442f51d950d5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 208040733130641746, guid: fdc4b5023c9361546a34442f51d950d5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 208040733130641749, guid: fdc4b5023c9361546a34442f51d950d5,
         type: 3}
@@ -7499,7 +7529,7 @@ PrefabInstance:
     - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
       propertyPath: maxDiceRange
-      value: 40
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}

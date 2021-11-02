@@ -200,8 +200,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 474.9352, y: 147.00002}
+  m_AnchoredPosition: {x: -0.85001, y: 2.6}
+  m_SizeDelta: {x: 716.2472, y: 141.80159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &116737126
 MonoBehaviour:
@@ -1939,6 +1939,18 @@ Rigidbody:
     type: 3}
   m_PrefabInstance: {fileID: 917083997}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &789024478 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8548144593306170965, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+    type: 3}
+  m_PrefabInstance: {fileID: 917083997}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789024473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623f17c9e8bd4b94f933261b0a6da3df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &789024483 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8548144593306170920, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
@@ -2402,8 +2414,18 @@ PrefabInstance:
       objectReference: {fileID: 789024473}
     - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
+      propertyPath: inventario
+      value: 
+      objectReference: {fileID: 789024478}
+    - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
       propertyPath: diceTopRange
-      value: 50
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
+      propertyPath: diceTopRandeDiffucult
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8548144593306170965, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}
@@ -5297,6 +5319,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8548144593530880277}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1990539067 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8548144593306170965, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+    type: 3}
+  m_PrefabInstance: {fileID: 8548144593530880277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990539064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623f17c9e8bd4b94f933261b0a6da3df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1990539072 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8548144593306170920, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
@@ -6099,6 +6133,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
+      propertyPath: inventario
+      value: 
+      objectReference: {fileID: 1990539067}
+    - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
+      propertyPath: diceTopRange
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548144593306170964, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
+        type: 3}
+      propertyPath: diceTopRandeDiffucult
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8548144593306170965, guid: e256bc1c5c40d6b4aae417f5acc9eba8,
         type: 3}

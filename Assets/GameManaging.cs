@@ -147,13 +147,13 @@ public class GameManaging : MonoBehaviour
 
 
 
-        if (player == player1 && diceResult <= player1alforja)
+        if (player == player1 && diceResult == player1alforja)
         {
             noSuma = true;
             player1alforja = 0;
             Debug.Log($"player1 perdió la alforja {player1alforja}" );
         }
-        if (player == player2 && diceResult <= player2alforja)
+        if (player == player2 && diceResult == player2alforja)
         {
             player2alforja = 0;
             noSuma = true;

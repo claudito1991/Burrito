@@ -1,4 +1,4 @@
-Mini game. Hot seat and turn based. This was the final project of workshop on game design. This game was developed in a week just to test some basic game design concepts.
+Mini game. Hot seat and turn based. This was the final project of a workshop on game design. This game was developed in a week just to test some basic game design concepts.
 
 
 ![initial screen](https://user-images.githubusercontent.com/30451301/140626322-6a0b5a12-6829-4e71-882f-c6281a81bf58.png)
